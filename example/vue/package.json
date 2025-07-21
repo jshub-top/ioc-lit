@@ -1,0 +1,23 @@
+{
+    "name": "vue",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "ioc": "link:../../",
+        "vue": "^3.4.21"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "6.0.0",
+        "sass-embedded": "^1.89.2",
+        "scss": "^0.2.4",
+        "typescript": "^5.2.2",
+        "vite": "7.0.5",
+        "vite-plugin-swc-transform": "1.1.0"
+    }
+}
