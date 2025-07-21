@@ -1,4 +1,4 @@
-import { Provider, run } from "ioc"
+import { Provider, run } from "ioc-lit"
 import { UserController } from "./controller/User.controller"
 export * from "./context"
 

@@ -9,7 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "ioc": "link:../../",
+        "ioc-lit": "link:../../",
         "vue": "^3.4.21"
     },
     "devDependencies": {

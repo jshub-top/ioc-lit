@@ -1,4 +1,4 @@
-import { Lifecycle, Provider } from "ioc";
+import { Lifecycle, Provider } from "ioc-lit";
 import { ref } from "vue";
 import { HomeService } from "../Home.service";
 import { SubMod, type ISubMod } from "../type";

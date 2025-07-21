@@ -1,4 +1,4 @@
-import { Provider } from "ioc";
+import { Provider } from "ioc-lit";
 import { UserService } from "../service/User.service";
 
 @Provider()

@@ -1,4 +1,4 @@
-import { Lifecycle, Provider } from "ioc";
+import { Lifecycle, Provider } from "ioc-lit";
 import { ref, computed, nextTick } from "vue";
 import { SubService } from "./module/sub.service";
 

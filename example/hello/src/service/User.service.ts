@@ -1,4 +1,4 @@
-import { Provider } from "ioc";
+import { Provider } from "ioc-lit";
 
 @Provider()
 export class UserService {

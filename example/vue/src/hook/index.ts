@@ -1,4 +1,4 @@
-import { run, Target } from "ioc";
+import { run, Target } from "ioc-lit";
 import { container } from "../context";
 
 export interface ServiceOption {
