@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { HomeService } from "../Home.service";
 import { SubMod, type ISubMod } from "../type";
 
-@Provider({ lifecycle: Lifecycle.Transient })
+@Provider({ lifecycle: Lifecycle.Singleton })
 export class SubService<T extends HomeService> extends SubMod<T> implements ISubMod<T> {
     title = ref("sub");
 

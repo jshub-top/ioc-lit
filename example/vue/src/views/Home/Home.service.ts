@@ -3,7 +3,7 @@ import { ref, computed, nextTick } from "vue";
 import { SubService } from "./module/sub.service";
 
 
-@Provider({ lifecycle: Lifecycle.Transient })
+@Provider({ lifecycle: Lifecycle.Singleton })
 export class HomeService {
     user_name = ref("John Doe");
 
@@ -18,6 +18,5 @@ export class HomeService {
     set_user_name() {
         this.user_name.value = "home";
         this.sub_service.title.value = "home";
-
     }
 }

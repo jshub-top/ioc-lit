@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { Provider, run } from "ioc-lit";
+import { Provider } from "ioc-lit";
 import { container } from "./context";
 
 @Provider()
@@ -10,4 +10,4 @@ class Main {
     }
 }
 
-run(Main, container)
+container.run(Main)

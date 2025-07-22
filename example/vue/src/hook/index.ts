@@ -1,4 +1,4 @@
-import { run, Target } from "ioc-lit";
+import { Target } from "ioc-lit";
 import { container } from "../context";
 
 export interface ServiceOption {
@@ -6,6 +6,6 @@ export interface ServiceOption {
 }
 
 export const useService = function <T extends Target>(target: T) {
-    const instance = run<T>(target, container);
+    const instance = container.run<T>(target);
     return instance;
 };
