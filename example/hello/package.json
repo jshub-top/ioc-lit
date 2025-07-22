@@ -2,7 +2,9 @@
     "name": "hello",
     "version": "1.0.0",
     "scripts": {
-        "run": "bun run ./index.ts"
+        "run": "bun run ./index.ts",
+        "build:ioc": "cd ../../ && pnpm build",
+        "dev": "pnpm build:ioc && pnpm run run"
     },
     "keywords": [],
     "author": "",

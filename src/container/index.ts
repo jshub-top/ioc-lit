@@ -5,7 +5,7 @@ import { Identifier, Target } from "..";
 
 export class Container {
 
-    _service = new Map<Target, any>()
+    _service = new Map<Target, InstanceType<Target>>()
 
     resolve<T>(target: Target): T {
         return this._service.get(target)

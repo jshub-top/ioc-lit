@@ -9,7 +9,14 @@ export const IdentifierParam = "Identifier:Param"
  * 用于将类标记为可注入的服务
  */
 export enum Lifecycle {
+    /**
+     * @description 单例模式
+     */
     Singleton = 'singleton',
+
+    /**
+     * @description 临时模式
+     */
     Transient = 'transient'
 }
 
@@ -19,14 +26,18 @@ export interface ProviderMetadata {
 
 export function Provider(option: ProviderMetadata = {}): ClassDecorator {
     return function(target) {
-        // params mate
+        /**
+         * @description set target mate data design:paramtypes
+         */
         Reflect.defineMetadata(
             IdentifierParam,
             Reflect.getOwnMetadata("design:paramtypes", target),
             target
         )
 
-        // provider mate
+        /**
+         * @description set targert option
+         */
         Reflect.defineMetadata(
             IdentifierOption,
             {
