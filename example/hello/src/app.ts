@@ -1,4 +1,4 @@
-import { Inject, Provider, run } from "ioc-lit";
+import { Inject, Provider } from "ioc-lit";
 import { UserController } from "./controller/User.controller";
 import { AgeService } from "service/Age.service";
 export * from "./context";
