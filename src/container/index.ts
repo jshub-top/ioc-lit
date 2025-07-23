@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { Identifier, IdentifierInject, IdentifierOption, IdentifierParam, Lifecycle, Target, type InjectMatePayload, type ProviderMetadata } from "..";
 
 /**
