@@ -4,8 +4,8 @@
     "description": "",
     "main": "dist/index.mjs",
     "scripts": {
-        "dev": "bunx unbuild --watch",
-        "build": "bunx unbuild"
+        "dev": "bunx --bun unbuild --watch",
+        "build": "bunx --bun unbuild"
     },
     "keywords": [],
     "author": "",
