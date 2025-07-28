@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
+        "lib": [
+            "ESNext",
+        ],
         "esModuleInterop": true,
         "removeComments": false,
         "preserveConstEnums": true,
@@ -10,8 +13,8 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "baseUrl": "./src",
-
     },
-    "include": ["src/**/*"],
-
+    "include": [
+        "src/**/*"
+    ],
 }
