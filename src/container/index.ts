@@ -116,11 +116,10 @@ export class ContainerWake implements IDispose {
     }
 
     public dispose_with_macor_task() {
-        this.macro_next.callback(this.dispose.call(this));
+        this.macro_next.callback(this.dispose.bind(this));
     }
 
     public dispose() {
         this._service.clear();
-        console.log("dispose container wake")
     }
 }
