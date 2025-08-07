@@ -1,9 +1,9 @@
-import { Identifier, IdentifierInject, IdentifierOption, IdentifierParam, Lifecycle, Target, type InjectMatePayload, type ProviderMetadata } from "..";
+import { Identifier, IdentifierInject, IdentifierOption, IdentifierParam, Lifecycle, MacroTaskNext, Target, type IDispose, type InjectMatePayload, type ProviderMetadata } from "..";
 
 /**
  * @description class Container. Provide service manage
  */
-export class Container {
+export class Container implements IDispose {
     /**
      * @description service container. to HashMap save
      */
@@ -34,10 +34,7 @@ export class Container {
     }
 
     run<T extends Target>(target: T): InstanceType<T> {
-        /**
-         * @description clear weak service.
-         */
-        this._service_weak._service.clear();
+
 
         const _run = (target: T) => {
             /**
@@ -91,16 +88,24 @@ export class Container {
 
         return _run(target);
     }
+
+    public dispose() {
+        this._service.clear();
+        this._service_weak.dispose();
+    }
 }
 
-export class ContainerWake {
-    _service = new Map<Target, InstanceType<Target>>();
+export class ContainerWake implements IDispose {
+    public _service = new Map<Target, InstanceType<Target>>();
 
-    resolve<T>(target: Target): T {
+    private macro_next = new MacroTaskNext();
+
+    public resolve<T>(target: Target): T {
         return this._service.get(target);
     }
 
-    registry(target: Target, instance: any, cover = true) {
+    public registry(target: Target, instance: any, cover = true) {
+        this.dispose_with_macor_task()
         // 如果存在
         if (this._service.has(target)) {
             // 如果 不覆盖
@@ -108,5 +113,14 @@ export class ContainerWake {
         }
 
         this._service.set(target, instance);
+    }
+
+    public dispose_with_macor_task() {
+        this.macro_next.callback(this.dispose.call(this));
+    }
+
+    public dispose() {
+        this._service.clear();
+        console.log("dispose container wake")
     }
 }

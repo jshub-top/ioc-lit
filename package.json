@@ -4,7 +4,7 @@
     "description": "",
     "main": "dist/index.mjs",
     "scripts": {
-        "dev": "bunx --bun unbuild --watch",
+        "dev": "bunx --bun unbuild --watch --sourcemap",
         "build": "bunx --bun unbuild"
     },
     "keywords": [],
